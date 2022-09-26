@@ -2,7 +2,7 @@
 <html lang="jp" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="https://kuroro4.github.io/basic/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
@@ -10,30 +10,46 @@
   </head>
   <body>
     <header>
-      <div id="header">SampleのHeader</div>
+      <div id="header">
+        <p>javascriptを使用したサンプルサイト</p>
+      </div>
+
+      <div class="overlay"></div>
+        <nav class="nav">
+          <div class="toggle">
+            <span id="deleteconpo" class="toggler"></span>
+          </div>
+          <div class="logo">
+            <a href="#">MENU</a>
+          </div>
+          <ul class="linkList">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">gallery</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
     </header>
     <main>
       <div class="top-animation">
-      <img id="changePic" src="https://github.com/kuroro4/basic/blob/main/1275782831_Starry_sky_landscape_painting_Ghibli_style.png?raw=true" alt="画像の切り替え">
+        <h1>設置した画像が数秒毎に切り替わります。</h1>
+      <img id="changePic" src="./images/1275782831_Starry_sky_landscape_painting_Ghibli_style.png" alt="画像の切り替え">
       </div>
 <div class="msg">Scroll Down<br>↓
-  <h2>テキストテキスト</h2>
-  <p><span class="lineMarker">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-  テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span></p>
+  <h2>スクロールに合わせて画像とテキストがフェードインするアニメーション</h2>
+</div>
+  <div class="fade-in fade-in-up">
+    <img src="./images/1835885494_Mysterious_forest_landscape_painting_Ghibli_style.png">
+    <p><span class="underline-before">フェードインに合わせてテキストの装飾をするアニメーション</span></p>
   </div>
   <div class="fade-in fade-in-up">
-    <img src="https://github.com/kuroro4/basic/blob/main/1835885494_Mysterious_forest_landscape_painting_Ghibli_style.png?raw=true">
-    <p>テキストテキストテキストテキストテキストテキストテキスト<br>
-    テキストテキストテキストテキストテキストテキストテキストテキスト<br>
-  テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-  </div>
-  <div class="fade-in fade-in-up">
-    <p>テキストテキストテキストテキストテキストテキストテキスト<br>
-    テキストテキストテキストテキストテキストテキストテキストテキスト<br>
-  テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-  <img src="https://github.com/kuroro4/basic/blob/main/4217697185_Mysterious_forest_landscape_painting_Ghibli_style.png?raw=true">
+    <p><span class="underline-before">テキストテキストテキストテキストテキストテキストテキスト</span></p>
+  <img src="./images/4217697185_Mysterious_forest_landscape_painting_Ghibli_style.png">
   </div>
 
+<h1 style="text-align: center;">動画や画像をスライドで表示するアニメーション</h1>
   <div class="swiper-container">
       <div class="swiper-wrapper">
           <div class="swiper-slide"><div id="player1"></div></div>
@@ -47,20 +63,20 @@
   </div>
 
   <div class="jsSlider_container">
-    <h1>テキストテキストテキストテキスト</h1>
+
     <div class="jsSlides fade">
       <!--<div class="jsSlider_numbertext">1 / 3</div>-->
-      <img src="https://github.com/kuroro4/basic/blob/main/1492991873_A_town_with_a_view_of_the_sea_Landscape_painting_Ghibli_style.png?raw=true">
+      <img src="./images/428947829_A_town_with_a_view_of_the_sea_Landscape_painting_Ghibli_style.png">
     </div>
 
     <div class="jsSlides fade">
       <!--<div class="jsSlider_numbertext">2 / 3</div>-->
-      <img src="https://github.com/kuroro4/basic/blob/main/428947829_A_town_with_a_view_of_the_sea_Landscape_painting_Ghibli_style.png?raw=true">
+      <img src="./images/727913660_A_town_with_a_view_of_the_sea_Landscape_painting_Ghibli_style.png">
     </div>
 
     <div class="jsSlides fade">
       <!--<div class="jsSlider_numbertext">3 / 3</div>-->
-      <img src="https://github.com/kuroro4/basic/blob/main/727913660_A_town_with_a_view_of_the_sea_Landscape_painting_Ghibli_style.png?raw=true">
+      <img src="./images/1492991873_A_town_with_a_view_of_the_sea_Landscape_painting_Ghibli_style.png">
     </div>
 
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -73,6 +89,23 @@
 </div>
   </div>
 
+<div class="form-container">
+<h2>送信form</h2>
+  <form id="form">
+  <p>氏名</p>
+  <input type="text" name="001" class="text" size="30" placeholder="必須" maxlength="80" required/>
+  <p>生年月日</p>
+  <input type="text" name="002" class="text" size="30" placeholder="必須" maxlength="80" required/>
+  <p>連絡先</p>
+  <input type="text" name="003" class="text" size="30" placeholder="必須" maxlength="80" required/>
+  <p>その他</p>
+  <input type="text" name="004" class="text" size="30"  maxlength="80">
+  <button id="submit1" type="submit" name="my_submit" class="my_submit_btn" value="signup">送信</button>
+  </form>
+</div>
+
+  <h1 style="text-align: center;">その他にもモーダルやアコーディオン等のUIアニメーションも可能です。</h1>
+
 <div id="page_top">
   <a href="#"></a>
 </div>
@@ -80,11 +113,14 @@
     <footer>
 
     </footer>
-    <script src="https://kuroro4.github.io/basic/fade-animation.js"></script>
-    <script src="https://kuroro4.github.io/basic/header.js"></script>
-    <script src="https://kuroro4.github.io/basic/slider.js"></script>
-    <script src="https://kuroro4.github.io/basic/fade-in.js"></script>
-    <script src="https://kuroro4.github.io/basic/top-back.js"></script>
-    <script src="https://kuroro4.github.io/basic/player.js"></script>
+    <script src="./js/fade-animation.js"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/slider.js"></script>
+    <script src="./js/fade-in.js"></script>
+    <script src="./js/marker.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/top-back.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/form.js"></script>
   </body>
 </html>

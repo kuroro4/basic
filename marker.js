@@ -1,20 +1,21 @@
-const scrollIn = function(){
+let expantion = document.getElementsByClassName('underline-before');
 
-    const target = document.getElementsByClassName('lineMarker');
-    const position = Math.floor(window.innerHeight * .75);
+let expantionswitch = ["off","off"];
 
-    for (let i = 0; i < target.length; i++) {
+window.onscroll = function(){
 
-        let offsetTop = Math.floor(target[i].getBoundingClientRect().top);
-        let offsetBottom = Math.floor(target[i].getBoundingClientRect().bottom);
+for(let i = 0,len = expantion.length;i < len;i++){
 
-        if (offsetTop < position) {
-            target[i].classList.add('scroll-in');
-        }
+let ex_clientRect = expantion[i].getBoundingClientRect();
 
-        if(offsetBottom < 0){
-            target[i].classList.remove('scroll-in');
-        }
-    }
+let wh = window.innerHeight;
+
+if(wh > ex_clientRect.top + 200 && expantionswitch[i] === "off") {
+
+expantion[i].classList.add('underline-after');
+
+expantionswitch[i] = "on";
+
 }
-window.addEventListener('scroll', scrollIn, false);
+}
+}

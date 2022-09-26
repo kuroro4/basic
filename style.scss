@@ -17,17 +17,21 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
 }
 
-/*fadeアニメーション*/
 .top-animation {
+
+  h1{
+    margin-top: 100px;
+    text-align: center;
+  }
 
   img {
     display: block;
     width: 75%;
-    margin: 100px auto 50px;
+    margin: 50px auto 50px;
   }
 }
 
-#changePic {
+/*#changePic {
 animation :imgfade 5s infinite;
 opacity: 0;
 }
@@ -51,9 +55,8 @@ opacity: 0;
 	100% {
 		opacity: 0;
 	}
-}
+}*/
 
-/* jsSlider */
 .jsSlider_container {
   max-width: 100%;
   position: relative;
@@ -72,7 +75,6 @@ opacity: 0;
 
 }
 
-/* ページ送り */
 .prev {
   cursor: pointer;
   position: absolute;
@@ -107,8 +109,6 @@ opacity: 0;
   text-decoration: none;
 }
 
-/* テキスト */
-
 .jsSlider_numbertext {
     color: #FFF;
     font-size: 0.9rem;
@@ -120,7 +120,6 @@ opacity: 0;
     right: 450px;
 }
 
-/* インジケーター */
 .jsSlider_dots {
   text-align: center;
 }
@@ -140,7 +139,6 @@ opacity: 0;
   background-color: #f0db3f;
 }
 
-/* fadeアニメーション */
 .fade {
   animation-name: fade;
   animation-duration: 1.2s;
@@ -155,13 +153,12 @@ opacity: 0;
   }
 }
 
-/*scroll fade-inアニメーション*/
 .msg{
   color: #333;
   font-size: 28px;
   font-weight: bold;
   line-height: 1.5;
-  margin-top: 40px;
+  margin: 50px 200px;
   text-align: center;
 
   h2 {
@@ -187,7 +184,8 @@ opacity: 0;
 
   p {
     width: 50%;
-    margin: 0 40px
+    margin: 0 40px;
+    font-size: x-large;
   }
 }
 
@@ -212,35 +210,192 @@ opacity: 0;
   transform: translate(0, 0);
 }
 
-/* ラインマーカー */
-.lineMarker.scroll-in{
-background-position: -100% 0.7rem;
+.underline-Area {
+	  width: 50%;
+	  min-width: 200px;
+	  height: auto;
+	  margin: 0;
+	  padding: 20px;
+	  border: 1px solid #333;
+  p {
+    	  margin: 60px auto;
+    }
 }
 
-.lineMarker {
-background-image: -webkit-linear-gradient(left, transparent 50%, rgb(255,250,90) 10%);
-background-image: -moz-linear-gradient(left, transparent 50%, rgb(255,250,90) 10%);
-background-image: linear-gradient(left, transparent 50%, rgb(255,250,90) 10%);
-background-repeat: repeat-x;
-background-size: 200% .7em;
-background-position: 0 .8em;
-transition: all 1.2s ease;
-font-weight: bold;
+
+
+.underline-before {
+	background: linear-gradient(green, green) 0 100%/0 2px no-repeat;
+	transition: background 3s;
+	text-decoration: none;
 }
 
-.lineBlue {
-background-image: -webkit-linear-gradient(left, transparent 50%, rgb(154,218,255) 10%);
-background-image: -moz-linear-gradient(left, transparent 50%, rgb(154,218,255) 10%);
-background-image: linear-gradient(left, transparent 50%, rgb(154,218,255) 10%);
+.underline-after {
+	background-size: 100% 10px;
 }
 
-.lineGreen {
-background-image: -webkit-linear-gradient(left, transparent 50%, rgb(152,255,155) 10%);
-background-image: -moz-linear-gradient(left, transparent 50%, rgb(152,255,155) 10%);
-background-image: linear-gradient(left, transparent 50%, rgb(152,255,155) 10%);
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: rgba(0,0,0,.3);
+  z-index: 190;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms ease-in;
+}
+nav.nav {
+  width: 300px;
+  height: 100vh;
+  background-color: #FFF;
+  right: -300px;
+  top: 0;
+  position: fixed;
+  padding: 20px 0;
+  transition: all 200ms ease-in-out;
+  z-index: 199;
+}
+nav.nav ul {
+    border: none;
+    padding: 0;
+}
+.toggle {
+  position: absolute;
+  right: 100%;
+  width: 50px;
+  height: 50px;
+  color: #313131;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+span.toggler,
+span.toggler:before,
+span.toggler:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #313131;
+    position: absolute;
+    pointer-events: none;
 }
 
-/*ページtopへ戻るボタン*/
+span.toggler:before{
+    bottom: 9px;
+}
+span.toggler:after {
+    top: 9px;
+}
+span.deleteclass {
+    background-color: transparent;
+}
+span.deleteclass::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+span.deleteclass::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.logo  a{
+  text-decoration: none;
+  color: #888;
+  font-size: 2rem;
+}
+.nav ul li {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav ul li a {
+  padding: 10px 20px;
+  display: block;
+  color: #313131;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 200ms ease;
+}
+.nav ul li a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show Nav */
+.show-nav .nav {
+  right: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,.6);
+}
+.show-nav .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+button#submit1.is-inactive {
+    background: #eeee;
+    filter: drop-shadow(0px 0px 1px #ccc);
+    pointer-events: none;
+    color: #999;
+}
+
+button#submit1.is-active {
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    background: #f0db40;
+    filter: drop-shadow(0px 2px 4px #ccc);
+    border-radius: 3px;
+    letter-spacing: 0.04rem;
+    pointer-events: auto;
+}
+
+.form-container{
+  background-color: darkturquoise;
+  border: solid 2px;
+  border-radius: 4px;
+  padding: 100px;
+  margin: 100px 20%;
+
+  h2{
+    text-align: center;
+  }
+}
+
+#form{
+  display: block;
+  width: 80%;
+  margin: auto;
+}
+
+#submit1{
+  display: block;
+  width: 20%;
+  margin-top: 20px;
+}
+
+input{
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  background-color: aliceblue;
+  border: 0;
+  border-radius: 4px;
+}
+
 #page_top{
   width: 90px;
   height: 90px;
@@ -290,7 +445,6 @@ background-image: linear-gradient(left, transparent 50%, rgb(152,255,155) 10%);
   color: #A12568;
 }
 
-/* コンテナのサイズ調整 */
 .swiper-container {
     width: 50%;
     height: 480px;
@@ -298,7 +452,6 @@ background-image: linear-gradient(left, transparent 50%, rgb(152,255,155) 10%);
     position: relative;
     margin: auto;
 }
-/* ページネイションをinlineで中央に */
 .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
     display: inline-block;
     width: auto;
